@@ -1,0 +1,48 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Roles{% endblock %}
+
+{% block body %}
+    <div class="get_form">
+        <table class="get_form_table">
+            <thead class="get_form_table_head">
+                <tr class="get_form_table_field">
+                    <th class="get_form_table_field_elem">name</th>
+                    <th class="get_form_table_field_elem">description</th>
+                </tr>
+            </thead>
+
+            <tbody class="getFormTableBody">
+                {% if roles %}
+                    {% for elem in roles %}
+                        <tr class="get_form_table_field">
+                            <th class="get_form_table_field_elem">{{ elem.name }}</th>
+                            <th class="get_form_table_field_elem">{{ elem.description }}</th>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="{% url 'addRole' %}"><button class="btn btn-success">Add</button></a>
+{% endblock %}
+
+

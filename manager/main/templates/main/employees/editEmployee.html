@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Task{% endblock %}
+
+{% block body %}
+    <h1>Create task</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{ form.name }}<br>
+        {{ form.login }}<br>
+        {{ form.password }}<br>
+        {{ form.age }}<br>
+        {{ form.email }}<br>
+        {{ form.phone }}<br>
+        {{ form.role }}<br>
+        {{ form.image }}
+
+        <button type="submit" class="btn btn-success">Edit</button>
+        <span>{{ error }}</span>
+    </form>
+    <a href="{% url 'infoEmployee' %}?employee_id={{ employee.id }}"><button class="btn btn-primary">return</button></a>
+{% endblock %}
